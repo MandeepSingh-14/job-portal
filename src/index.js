@@ -5,7 +5,8 @@ dotenv.config({});
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import connectDB from "./db/index.js";
-import userRouter from "./routes/user.routes.js"
+import userRoute from "./routes/user.routes.js";
+import companyRoute from "./routes/company.routes.js";   
 
 const app = express();
 app.use(express.json({limit:"16kb"}))
@@ -23,7 +24,9 @@ app.use(cors(corsOptions));
 const PORT = process.env.PORT||3000 ;
 
 //apis 
-app.use("/api/v1/users",userRouter)
+app.use("/api/v1/users",userRoute)
+app.use("/api/v1/companies",companyRoute)
+
 
 app.listen(PORT, () => {
   connectDB();
