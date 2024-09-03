@@ -22,7 +22,7 @@
         },
         role:{
             type :String,
-            enum: ['Student','  Recruiter'],
+            enum: ['Student','Recruiter'],
             required:true
         },
         profile:{
@@ -30,7 +30,7 @@
                 type:String
             },
             skills:{
-                type:[{Sting}],
+                type:[{String}],
             },
             resume:{
                 type:String,
