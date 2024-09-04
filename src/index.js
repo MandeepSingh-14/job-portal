@@ -7,6 +7,7 @@ import cors from 'cors';
 import connectDB from "./db/index.js";
 import userRoute from "./routes/user.routes.js";
 import companyRoute from "./routes/company.routes.js";   
+import jobRoute from "./routes/job.routes.js"
 
 const app = express();
 app.use(express.json({limit:"16kb"}))
@@ -26,7 +27,7 @@ const PORT = process.env.PORT||3000 ;
 //apis 
 app.use("/api/v1/users",userRoute)
 app.use("/api/v1/companies",companyRoute)
-
+app.use("/api/v1/jobs",jobRoute)
 
 app.listen(PORT, () => {
   connectDB();
